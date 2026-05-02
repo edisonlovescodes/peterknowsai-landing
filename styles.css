@@ -961,22 +961,25 @@ strong { color: var(--text-bright); font-weight: 600; }
   .avatar { width: 26px; height: 26px; margin-left: -8px; border-width: 1.5px; }
   .badge-label { font-size: 11.5px; }
 
-  /* Stat row goes column on mobile, softer container border */
+  /* Stat row stays side-by-side on mobile, just compressed */
   .stat-row {
-    flex-direction: column;
-    gap: 14px;
-    padding: 20px 24px;
+    flex-direction: row;
+    gap: 0;
+    padding: 18px 14px;
     margin-bottom: 32px;
     border-radius: 14px;
     box-shadow: inset 0 8px 22px -2px var(--accent-glow-soft);
+    width: 100%;
+    max-width: 420px;
   }
   .stat-divider {
-    width: 48px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.06);
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.08);
   }
-  .stat { padding: 0; }
-  .stat-num { font-size: 42px; }
+  .stat { padding: 0 8px; flex: 1; }
+  .stat-num { font-size: 32px; letter-spacing: -0.03em; }
+  .stat-label { font-size: 10.5px; line-height: 1.3; }
 
   /* Buttons full-width on mobile so they never overflow */
   .btn-glass {
@@ -1082,9 +1085,11 @@ strong { color: var(--text-bright); font-weight: 600; }
   .hero-sub { font-size: 15.5px; line-height: 1.55; }
   .section-sub { font-size: 15px; }
   .section-head { margin-bottom: 36px; }
-  .stat-row { padding: 20px 24px; }
-  .stat-num { font-size: 38px; }
-  .stat-label { font-size: 12px; }
+  .stat-row { padding: 16px 12px; }
+  .stat { padding: 0 4px; }
+  .stat-num { font-size: 28px; }
+  .stat-label { font-size: 10px; }
+  .stat-divider { height: 36px; }
   .path-summary li { font-size: 14px; padding: 7px 0 7px 22px; }
   .path-summary li::before { font-size: 14px; }
 }
@@ -1100,7 +1105,11 @@ strong { color: var(--text-bright); font-weight: 600; }
   .hero-headline { font-size: 32px; }
   .hero-sub { font-size: 14.5px; }
   .badge-label { font-size: 10.5px; }
-  .stat-num { font-size: 34px; }
+  .stat-row { padding: 14px 10px; }
+  .stat { padding: 0 2px; }
+  .stat-num { font-size: 24px; }
+  .stat-label { font-size: 9.5px; letter-spacing: 0.02em; }
+  .stat-divider { height: 30px; }
 
   .feature-card { padding: 24px 20px; }
   .feature-card h3 { font-size: 17.5px; }
