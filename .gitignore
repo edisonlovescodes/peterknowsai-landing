@@ -1,0 +1,9 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Local secrets
+.env
+.env.local
