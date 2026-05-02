@@ -1,11 +1,7 @@
 #:schema https://developers.cloudflare.com/wrangler-config-schema.json
-# Cloudflare Workers static-assets config.
-# Used if you deploy via the Workers flow (Workers + Static Assets) instead of Pages.
-# For Cloudflare Pages, this file is harmless and ignored.
 
 name = "peterknowsai-landing"
 compatibility_date = "2025-01-01"
 
 [assets]
-directory = "."
-not_found_handling = "404-page"
+directory = "./"
