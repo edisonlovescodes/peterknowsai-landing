@@ -1,0 +1,13 @@
+.git
+.git/**
+.wrangler
+.wrangler/**
+.gitignore
+.assetsignore
+node_modules
+node_modules/**
+wrangler.toml
+vercel.json
+DEPLOY.md
+*.md
+.DS_Store

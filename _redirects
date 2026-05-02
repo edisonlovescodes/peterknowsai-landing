@@ -1,2 +1,0 @@
-# Redirect www → apex
-https://www.peterknowsai.com/* https://peterknowsai.com/:splat 301!
