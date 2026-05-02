@@ -908,124 +908,173 @@ strong { color: var(--text-bright); font-weight: 600; }
   .hero { padding: 80px 0 70px 0; }
 }
 
-/* ----- Mobile (≤720px) ----- */
+/* ----- Mobile (≤720px) — refined paddings + softened borders ----- */
 @media (max-width: 720px) {
-  .container { padding: 0 20px; }
-  .header-inner { padding: 14px 18px; gap: 8px; }
-  .bg-grid { margin: 0 20px; }
+  .container { padding: 0 18px; }
+  .header-inner { padding: 12px 16px; gap: 8px; }
+  .bg-grid {
+    margin: 0;
+    background-size: 60px 60px;
+    opacity: 0.5;
+  }
   .bg-sidebar { display: none; }  /* sidebars eat too much horizontal space on phones */
 
-  /* Header gets compact: smaller logo, smaller buttons */
-  .logo { font-size: 12.5px; gap: 6px; }
-  .logo-mark { font-size: 8px; }
+  /* Soften ALL card borders on mobile (the 1px white borders look harsh on small screens) */
+  .feature-card,
+  .path-step,
+  .faq-item,
+  .stat-row,
+  .badge-glass {
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Header gets compact: smaller logo, smaller buttons, softer borders */
+  .logo { font-size: 12px; gap: 6px; letter-spacing: 0.04em; }
+  .logo-mark { font-size: 7px; }
   .btn-sm {
-    height: 38px;
-    padding: 0 14px;
-    font-size: 12.5px;
+    height: 36px;
+    padding: 0 13px;
+    font-size: 12px;
     border-radius: 10px;
+    border-width: 1px;
     min-width: 0;
   }
-  .header-social { width: 32px; height: 32px; margin-left: 4px; }
+  .header-social {
+    width: 36px;
+    height: 36px;
+    margin-left: 4px;
+    border-radius: 9px;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
   .header-social svg { width: 14px; height: 14px; }
 
   /* Hero scaling */
-  .hero { padding: 56px 0 56px 0; }
-  .hero-headline { line-height: 1.1; letter-spacing: -0.03em; }
-  .hero-sub { margin-bottom: 36px; }
+  .hero { padding: 48px 0 56px 0; }
+  .hero-headline { line-height: 1.08; letter-spacing: -0.03em; }
+  .hero-sub { margin-bottom: 32px; }
   .badge-glass {
-    padding: 6px 16px 6px 6px;
-    margin-bottom: 24px;
+    padding: 6px 14px 6px 6px;
+    margin-bottom: 22px;
     border-radius: 12px;
+    box-shadow: inset 0 8px 22px -2px var(--accent-glow-soft);
   }
-  .avatar { width: 26px; height: 26px; margin-left: -8px; }
+  .avatar { width: 26px; height: 26px; margin-left: -8px; border-width: 1.5px; }
   .badge-label { font-size: 11.5px; }
 
-  /* Stat row goes column on mobile */
+  /* Stat row goes column on mobile, softer container border */
   .stat-row {
     flex-direction: column;
-    gap: 16px;
-    padding: 24px 32px;
-    margin-bottom: 36px;
-    border-radius: 16px;
+    gap: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    border-radius: 14px;
+    box-shadow: inset 0 8px 22px -2px var(--accent-glow-soft);
   }
-  .stat-divider { width: 56px; height: 1px; }
+  .stat-divider {
+    width: 48px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+  }
   .stat { padding: 0; }
-  .stat-num { font-size: 44px; }
+  .stat-num { font-size: 42px; }
 
   /* Buttons full-width on mobile so they never overflow */
   .btn-glass {
-    height: 52px;
+    height: 50px;
     font-size: 14px;
-    padding: 0 24px;
+    padding: 0 22px;
+    border-width: 1.5px;
   }
   .btn-large {
     width: 100%;
-    max-width: 340px;
+    max-width: 320px;
     min-width: 0;
     padding: 0 20px;
+    height: 54px;
   }
 
   /* Section spacing */
-  .section { padding: 64px 0; }
-  .section-block { padding: 60px 0; }
-  .section-head { margin-bottom: 40px; }
+  .section { padding: 56px 0; }
+  .section-block { padding: 52px 0; }
+  .section-head { margin-bottom: 36px; }
 
-  /* Path steps tighter */
+  /* Path steps: tighter padding, softer borders */
   .path-step {
-    padding: 32px 24px;
-    border-radius: 16px;
+    padding: 28px 22px;
+    border-radius: 14px;
   }
   .path-step::before {
-    width: 240px;
-    height: 240px;
-    top: -80px;
-    right: -50px;
+    width: 200px;
+    height: 200px;
+    top: -60px;
+    right: -40px;
+    opacity: 0.3;
   }
-  .path-num { font-size: 72px; margin-bottom: 12px; }
-  .path-content h3 { font-size: 24px; margin-bottom: 14px; }
-  .path-lead { font-size: 16px; margin-bottom: 18px; }
-  .path-step-body p { font-size: 15px; margin-bottom: 18px; }
+  .path-num { font-size: 68px; margin-bottom: 10px; }
+  .path-content h3 { font-size: 22px; margin-bottom: 12px; line-height: 1.18; }
+  .path-lead { font-size: 15.5px; margin-bottom: 16px; line-height: 1.55; }
+  .path-step-body p, .path-content p { font-size: 14.5px; margin-bottom: 16px; line-height: 1.6; }
   .path-bullets li {
-    font-size: 14.5px;
-    padding: 8px 0 8px 28px;
+    font-size: 14px;
+    padding: 7px 0 7px 26px;
+    line-height: 1.5;
   }
-  .path-bullets li::before { top: 16px; }
+  .path-bullets li::before { top: 15px; width: 14px; }
+  .path-summary li { font-size: 14px; padding: 7px 0 7px 22px; }
 
-  /* Feature cards */
-  .feature-card { padding: 28px 24px; border-radius: 14px; }
-  .feature-card h3 { font-size: 19px; }
+  /* Feature cards: tighter padding, softer borders, smaller icon tile */
+  .feature-card {
+    padding: 26px 22px;
+    border-radius: 14px;
+  }
+  .feature-card h3 { font-size: 18px; line-height: 1.28; }
+  .feature-card p { font-size: 14.5px; line-height: 1.6; }
   .feature-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    margin-bottom: 18px;
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+    margin-bottom: 16px;
+    border-color: rgba(94, 23, 235, 0.18);
   }
 
-  /* FAQ items */
-  .faq-item summary { padding: 18px 22px; padding-right: 56px; }
-  .faq-item summary > span:first-child { font-size: 14.5px; }
-  .faq-item p { padding: 0 22px 18px 22px; font-size: 14px; }
-  .faq-toggle { width: 26px; height: 26px; font-size: 16px; }
+  /* FAQ items: tighter padding, softer borders */
+  .faq-item { border-radius: 12px; }
+  .faq-item summary {
+    padding: 16px 20px;
+    padding-right: 50px;
+    gap: 12px;
+  }
+  .faq-item summary > span:first-child { font-size: 14px; line-height: 1.4; }
+  .faq-item p { padding: 0 20px 16px 20px; font-size: 13.5px; line-height: 1.6; }
+  .faq-toggle {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    background: rgba(94, 23, 235, 0.1);
+  }
 
   /* Final CTA */
-  .section-final { padding: 88px 0; }
-  .final-headline { letter-spacing: -0.03em; }
+  .section-final { padding: 80px 0; }
+  .final-headline { letter-spacing: -0.025em; line-height: 1.1; }
+  .final-sub { font-size: 15.5px; line-height: 1.55; margin-bottom: 32px; }
 
   /* Side glows muted on mobile (less visual noise on small screens) */
   .side-glow {
-    width: 100px;
-    height: 320px;
-    opacity: 0.35;
+    width: 80px;
+    height: 280px;
+    opacity: 0.28;
+    filter: blur(60px);
   }
-  .side-glow-left { left: -60px; }
-  .side-glow-right { right: -60px; }
+  .side-glow-left { left: -50px; }
+  .side-glow-right { right: -50px; }
 
   /* Footer stacks */
   .footer-inner {
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     text-align: center;
   }
+  .footer-brand { font-size: 11px; }
 }
 
 /* ----- Small phones (≤600px) ----- */
