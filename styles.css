@@ -1096,11 +1096,19 @@ strong { color: var(--text-bright); font-weight: 600; }
 
 /* ----- Tiny phones (≤420px) — iPhone SE and similar ----- */
 @media (max-width: 420px) {
-  .container { padding: 0 16px; }
-  .header-inner { padding: 12px 14px; }
+  .container { padding: 0 14px; }
+  .header-inner { padding: 12px 12px; gap: 6px; }
 
-  /* Hide the "Get Started" button on tiniest screens; keep nav-IG icon only */
-  .header-inner .btn-sm { display: none; }
+  /* Keep Get Started button visible on iPhone SE — just shrink it more */
+  .header-inner .btn-sm {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+  .logo { font-size: 11px; gap: 5px; }
+  .header-social { width: 32px; height: 32px; margin-left: 2px; }
+  .header-social svg { width: 13px; height: 13px; }
 
   .hero-headline { font-size: 32px; }
   .hero-sub { font-size: 14.5px; }
